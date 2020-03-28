@@ -56,9 +56,9 @@ namespace SimpleCalculator
             Button opBtn = (Button)sender;
 
 
-            if (value != 0)
+            if (value != 0) // chain operations
             {
-                button15.PerformClick();//click result button
+                equal.PerformClick();//click result button
                 operation_pressed = true;
                 operation = opBtn.Text;
                 equation.Text = value +  " " + operation;
@@ -104,6 +104,61 @@ namespace SimpleCalculator
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            equal.Focus();
+            switch (e.KeyChar.ToString())
+            {
+                case "0":
+                    zero.PerformClick();
+                    break;
+                case "1":
+                    one.PerformClick();
+                    break;
+                case "2":
+                    two.PerformClick();
+                    break;
+                case "3":
+                    three.PerformClick();
+                    break;
+                case "4":
+                    four.PerformClick();
+                    break;
+                case "5":
+                    five.PerformClick();
+                    break;
+                case "6":
+                    six.PerformClick();
+                    break;
+                case "7":
+                    seven.PerformClick();
+                    break;
+                case "8":
+                    eight.PerformClick();
+                    break;
+                case "9":
+                    nine.PerformClick();
+                    break;
+                case "+":
+                    plus.PerformClick();
+                    break;
+                case "-":
+                    minus.PerformClick();
+                    break;
+                case "*":
+                    times.PerformClick();
+                    break;
+                case "/":
+                    divide.PerformClick();
+                    break;
+                case "ENTER":
+                    equal.PerformClick();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
