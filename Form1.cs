@@ -15,13 +15,24 @@ namespace SimpleCalculator
 
         private void button_Click(object sender, EventArgs e)
         {
-            if (result.Text == "0" || operation_pressed)
+            if (result.Text.Equals("0") || operation_pressed)
             {
                 result.Clear();
             }
             operation_pressed = false;
             Button numBtn = (Button)sender; //convert the sender object to a button
-            result.Text = result.Text + numBtn.Text;
+            if (numBtn.Text.Equals(".")) //check for multiple decimal points
+            {
+                if (!result.Text.Contains("."))
+                {
+                    result.Text = result.Text + numBtn.Text;
+                }
+            }
+            else
+            {
+
+            }
+            
         }
 
         private void button17_Click(object sender, EventArgs e)
